@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let targetNumber = Math.floor(Math.random() * 100) + 1; // returns number between 1 and 100
     let remainingChances = 10;
-    console.log(targetNumber);
+    //console.log(targetNumber); //Just for development purpose
 
     function updateChances() {
         chances.textContent = `Chances left: ${remainingChances}`;
