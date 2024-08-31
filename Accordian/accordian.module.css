@@ -1,0 +1,101 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('./assets/luke-chesser-pJadQetzTkI-unsplash.jpg') no-repeat center center fixed; /* Adjust the URL to your image */
+    background-size: cover; /* Ensures the image covers the entire page */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.accordion {
+    width: 90%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.accordion-item {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 2px solid #ccc; /* Grey border for a subtle look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff; /* White background for content area */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.accordion-header {
+    font-weight: 400;
+    background: linear-gradient(135deg, #ffffff 0%, #f1f1f1 100%);
+    color: #333;
+    cursor: pointer;
+    padding: 15px 20px;
+    border: none;
+    text-align: left;
+    font-size: 18px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.accordion-header:hover {
+    font-weight: 700;
+    background-color: #000; /* Black background on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.arrow {
+    font-size: 20px;
+    color: #333; /* Dark color for better visibility */
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    background-color: #fff; /* White background for the arrow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    background-color: #f9f9f9;
+    padding: 0 20px;
+}
+
+.accordion-content p {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .accordion-header {
+        font-size: 16px;
+        padding: 12px 15px;
+    }
+
+    .accordion-content {
+        padding: 0 15px;
+    }
+}
+
+/* Rotate arrow when expanded */
+.accordion-item.open .arrow {
+    transform: rotate(180deg);
+}

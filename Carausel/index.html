@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <link rel="stylesheet" href="./carousel.module.css">
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slide">
+                <img src="./assets/img1.jpg" alt="Slide 1" onerror="this.onerror=null; this.src='./assets/fallback.jpg';">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/img2.jpg" alt="Slide 2" onerror="this.onerror=null; this.src='./assets/fallback.jpg';">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/img3.jpg" alt="Slide 3" onerror="this.onerror=null; this.src='./assets/fallback.jpg';">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/img4.jpg" alt="Slide 4" onerror="this.onerror=null; this.src='./assets/fallback.jpg';">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/img5.jpg" alt="Slide 5" onerror="this.onerror=null; this.src='./assets/fallback.jpg';">
+            </div>
+        </div>
+        <button class="carousel-button prev">&#10094;</button>
+        <button class="carousel-button next">&#10095;</button>
+        <div class="carousel-indicators">
+            <button class="indicator" data-slide="0"></button>
+            <button class="indicator" data-slide="1"></button>
+            <button class="indicator" data-slide="2"></button>
+            <button class="indicator" data-slide="3"></button>
+            <button class="indicator" data-slide="4"></button>
+        </div>
+    </div>
+    <script src="./carousel.js"></script>
+</body>
+</html>
