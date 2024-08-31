@@ -5,13 +5,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const feedback = document.getElementById('feedback');
     const chances = document.getElementById('chances');
     const victoryMessage = document.getElementById('victoryMessage');
-    
+
     let targetNumber = Math.floor(Math.random() * 100) + 1; // returns number between 1 and 100
     let remainingChances = 10;
-    //console.log(targetNumber); //Just for development purpose
 
     function updateChances() {
         chances.textContent = `Chances left: ${remainingChances}`;
+    }
+
+    function getFeedbackMessage(difference) {
+        if (difference === 0) {
+            return '';
+        } else if (difference <= 5) {
+            return 'You are extremely close!';
+        } else if (difference <= 10) {
+            return 'Woah! You are getting closer!';
+        } else if (difference <= 20) {
+            return 'Hey,You are in the right area.';
+        } else if (difference <= 30) {
+            return 'Cool. You are getting farther away.';
+        } else {
+            return 'Carefull You are far from the target.';
+        }
     }
 
     function handleGuess() {
@@ -24,9 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
         remainingChances--;
         updateChances();
 
+        const difference = Math.abs(targetNumber - guess);
+
         if (guess === targetNumber) {
             feedback.textContent = '';
-            victoryMessage.style.display = 'block'; //Will Show victory message
+            victoryMessage.style.display = 'block'; // Will Show victory message
             submitGuess.disabled = true;
             restartGame.style.display = 'inline-block';
         } else if (remainingChances === 0) {
@@ -34,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitGuess.disabled = true;
             restartGame.style.display = 'inline-block';
         } else {
-            feedback.textContent = guess < targetNumber ? 'Too low!' : 'Too high!';
+            feedback.textContent = getFeedbackMessage(difference);
         }
     }
 
