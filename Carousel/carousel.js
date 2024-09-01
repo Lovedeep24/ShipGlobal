@@ -34,6 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initialize the carousel
+  
     showSlide(currentIndex);
 });
