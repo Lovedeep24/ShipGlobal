@@ -1,5 +1,3 @@
-// carousel.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const carousel = document.querySelector('.carousel');
     const slides = document.querySelectorAll('.carousel-slide');
